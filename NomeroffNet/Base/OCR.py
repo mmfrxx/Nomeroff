@@ -65,7 +65,8 @@ class OCR(TextImageGenerator):
             try:
                 description = json.load(open(json_filepath, 'r'))['description']
             except:
-                print json.load(open(json_filepath, 'r'))['description']
+                datastore = json.load(open(json_filepath, 'r'))
+                print datastore['description']
             lens.append(len(description))
             letters += description
         max_plate_length = max(Counter(lens).keys())

@@ -15,9 +15,8 @@ keras.backend.clear_session()
 # change this property
 NOMEROFF_NET_DIR = os.path.abspath('../')
 VERSION = "4"
-DATASET_NAME = ""
 MODE = "cpu"
-PATH_TO_DATASET = os.path.join(NOMEROFF_NET_DIR, "datasets/", DATASET_NAME)
+PATH_TO_DATASET = os.path.join(NOMEROFF_NET_DIR, "datasets/")
 RESULT_MODEL_PATH = os.path.join(NOMEROFF_NET_DIR, "models/", 'anpr_ocr_kz_{}-{}.h5'.format(VERSION, MODE))
 
 # FROZEN_MODEL_PATH = os.path.join(NOMEROFF_NET_DIR, "models/", 'anpr_ocr_{}_{}-{}.pb'.format(DATASET_NAME, VERSION, MODE))
@@ -35,7 +34,7 @@ class kz(OCR):
         OCR.__init__(self)
         # only for usage model
         # in train generate automaticly
-        self.letters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C","D", "E","F","G", "H", "I","J", "K","L", "M","N", "O", "P","Q", "R","S","T","U","V","W","X", "Y", "Z"]
+        self.letters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "E", "H", "I", "K", "M", "O", "P", "T", "X"]
         
         self.EPOCHS = 5
 

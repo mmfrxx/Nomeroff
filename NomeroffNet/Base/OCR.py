@@ -65,7 +65,7 @@ class OCR(TextImageGenerator):
             try:
                 description = json.load(open(json_filepath, 'r'))['description']
             except:
-                print json_filepath
+                print(json_filepath)
                 
             lens.append(len(description))
             letters += description

@@ -61,7 +61,11 @@ class OCR(TextImageGenerator):
         lens = []
         for filename in os.listdir(ann_dirpath):
             json_filepath = join(ann_dirpath, filename)
-            description = json.load(open(json_filepath, 'r'))['description']
+            #description = json.load(open(json_filepath, 'r'))['description']
+            try:
+                description = json.load(open(json_filepath, 'r'))['description']
+            except:
+                print json.load(open(json_filepath, 'r'))['description']
             lens.append(len(description))
             letters += description
         max_plate_length = max(Counter(lens).keys())

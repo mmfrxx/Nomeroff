@@ -15,7 +15,7 @@ keras.backend.clear_session()
 # change this property
 NOMEROFF_NET_DIR = os.path.abspath('../')
 VERSION = "4"
-MODE = "cpu"
+MODE = "gpu"
 PATH_TO_DATASET = os.path.join(NOMEROFF_NET_DIR, "datasets/")
 RESULT_MODEL_PATH = os.path.join(NOMEROFF_NET_DIR, "models/", 'anpr_ocr_kz_{}-{}.h5'.format(VERSION, MODE))
 
@@ -36,7 +36,7 @@ class kz(OCR):
         # in train generate automaticly
         self.letters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C","D", "E","F","G", "H", "I","J", "K","L", "M","N", "O", "P","Q","R","S", "T","U","V","W", "X","Y", "Z"]
         
-        self.EPOCHS = 5
+        self.EPOCHS = 3
 
 
 # In[3]:

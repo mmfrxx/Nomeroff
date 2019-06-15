@@ -35,7 +35,11 @@ class TextImageGenerator:
             if ext == '.png':
                 img_filepath = join(img_dirpath, filename)
                 json_filepath = join(ann_dirpath, name + '.json')
-                description = json.load(open(json_filepath, 'r'))['description']
+                #description = json.load(open(json_filepath, 'r'))['description']
+                try:
+                    description = json.load(open(json_filepath, 'r'))['description']
+                except:
+                    print(json_filepath)
                 if TextImageGenerator.is_valid_str(self, description):
                     self.samples.append([img_filepath, description])
 

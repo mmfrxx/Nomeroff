@@ -15,7 +15,7 @@ keras.backend.clear_session()
 # change this property
 NOMEROFF_NET_DIR = os.path.abspath('../')
 VERSION = "4"
-MODE = "gpu"
+MODE = "cpu"
 PATH_TO_DATASET = os.path.join(NOMEROFF_NET_DIR, "datasets/")
 RESULT_MODEL_PATH = os.path.join(NOMEROFF_NET_DIR, "models/", 'anpr_ocr_kz_{}-{}.h5'.format(VERSION, MODE))
 
@@ -65,29 +65,7 @@ model = ocrTextDetector.train(mode=MODE)
 ocrTextDetector.test(verbose=True)
 
 
-# In[7]:
-
-
 # Result = "../models/thirdtry.pb"
 res = "../models/fifthtry.h5"
 # ocrTextDetector.save(Result, verbose=True)
 ocrTextDetector.save(res, verbose=True)
-
-
-# In[29]:
-
-
-
-
-
-# In[32]:
-
-
-
-
-
-# In[ ]:
-
-
-
-

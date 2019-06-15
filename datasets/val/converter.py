@@ -1,6 +1,7 @@
 import glob 
 import cv2
 
+import json
 lst = glob.glob("./img/*")
 # lst2 = glob.glob("./ann/*.json")
 # for i in range(len(lst1)):
@@ -16,8 +17,12 @@ for l in lst:
 	height, width = img.shape[0], img.shape[1]
 	length = len(l)
 	cutted = l[6:length-4]
-	print(cutted, height, width)
+	if ("." in cutted) or (" " in cutted): print(cutted)
+        #print(cutted, height, width)
 	f = open("./ann/"+cutted+".json", "w")
 	f.write("{\"description\":\""+cutted+"\",\"name\":\""+cutted+"\",\"region_id\":\"7\",\"stated_id\":\"2\",\"size\":")
 	f.write("{\"width\":"+ str(width) +",\"height\":"+ str(height)+"},\"moderation\":")
-	f.write("{\"isModerated\":1,\"moderatedBy\":\"AzimovS\"}}")
+	f.write("{\"isModerated\":1,\"moderatedBy\":\"mmfrxx\"}}")
+	f.close()
+	description = json.load(open("./ann/"+cutted+".json", "r"))["description"]
+	f.close()

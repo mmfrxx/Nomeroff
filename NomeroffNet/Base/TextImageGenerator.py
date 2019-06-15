@@ -32,7 +32,7 @@ class TextImageGenerator:
         self.samples = []
         for filename in os.listdir(img_dirpath):
             name, ext = os.path.splitext(filename)
-            if ext == '.png':
+            if ext == '.png' or ext == '.jpg':
                 img_filepath = join(img_dirpath, filename)
                 json_filepath = join(ann_dirpath, name + '.json')
                 description = json.load(open(json_filepath, 'r'))['description']
